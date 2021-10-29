@@ -1,12 +1,15 @@
 import { filter } from 'dom-helpers';
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import LargePack from './LargePack/LargePack';
+import SmallPack from './SmallPack/SmallPack';
 
 const Package = () => {
 
     const [tourPack, setTourPack] = useState([])
 
-    const tourism = tourPack.filter(packs => packs.cost < 5500)
+    const tourism = tourPack.filter(packs => packs.cost <= 3500)
+    const tourisms = tourPack.filter(combo => combo.cost >= 7000)
 
     //Using GET API From DB
     useEffect(() => {
@@ -17,9 +20,14 @@ const Package = () => {
     return (
         <>
             <Container>
-                <Row>
-                    {tourism?.map(tours => <li key={tours._id} >{tours.title}</li>   )         }
-                </Row>
+                <h2 className="text-center">Perfect Holidays</h2>
+                    <p className="text-center">Choose your best package to join world adventure club</p>
+                <div>
+                    {tourism?.map(tours => <SmallPack key={tours._id} tours={tours}> </SmallPack>  )         }
+                </div>
+                <div className="tourzone my-3">
+                    {tourisms?.map(tours => <LargePack key={tours._id} camp={tours}> </LargePack>)         }
+                </div>
             </Container>
         </>
     );
