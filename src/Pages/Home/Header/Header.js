@@ -1,9 +1,13 @@
-import Button from '@restart/ui/esm/Button';
+import useAuth from '../../../Hooks/useAuth';
 import React from 'react';
-import { Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container,Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import Banner from '../Banner/Banner';
+import './Header.css'
 
 const Header = () => {
+
+    const { user} = useAuth();
+
     return (
         <div>
            <Navbar bg="light" expand="lg">
@@ -16,9 +20,10 @@ const Header = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="#action1">Home</Nav.Link>
-                        <Nav.Link href="#action2">Link</Nav.Link>
-                        <NavDropdown title="Link" id="navbarScrollingDropdown">
+                        <Nav.Link id="menu" href="#action1">Home</Nav.Link>
+                        <Nav.Link id="menu" href="#action1">Combo</Nav.Link>
+                        <Nav.Link id="menu" href="#action1">Services</Nav.Link>
+                        <NavDropdown title="Package" id="navbarScrollingDropdown">
                         <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
                         <NavDropdown.Divider />
@@ -26,19 +31,10 @@ const Header = () => {
                             Something else here
                         </NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="#" disabled>
-                        Link
-                        </Nav.Link>
+                        <Nav.Link id="menu" href="#action1">Location</Nav.Link>
+                        <Nav.Link id="menu" href="#action1">Blog</Nav.Link>
+                            <Nav.Link id="menu" href="#action1">{user?.uid ? 'Logout' : 'Register' }</Nav.Link>
                     </Nav>
-                    <Form className="d-flex">
-                        <FormControl
-                        type="search"
-                        placeholder="Search"
-                        className="me-2"
-                        aria-label="Search"
-                        />
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

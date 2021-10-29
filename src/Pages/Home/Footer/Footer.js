@@ -4,8 +4,8 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <>
-            <Container>
+        <div className="footer-cover">
+            <Container className="footer">
                 <Row>
                     <div className="col-md-3">
                         <h3 className="mb-e">Social Media</h3>
@@ -46,7 +46,7 @@ const Footer = () => {
                     </div>
                 </Row>
         </Container>
-        </>
+        </div>
     );
 };
 

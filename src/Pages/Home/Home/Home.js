@@ -4,6 +4,8 @@ import Package from '../Package/Package';
 import Upcoming from '../Upcoming/Upcoming';
 import './Home.css';
 
+// background-color:deepskyblue;
+
 const Home = () => {
     return (
         <div className="home">
