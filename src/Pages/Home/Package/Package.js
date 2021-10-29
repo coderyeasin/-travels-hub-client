@@ -1,6 +1,6 @@
-import { filter } from 'dom-helpers';
 import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
+import Upcoming from '../Upcoming/Upcoming';
 import LargePack from './LargePack/LargePack';
 import SmallPack from './SmallPack/SmallPack';
 
@@ -10,7 +10,7 @@ const Package = () => {
 
     const tourism = tourPack.filter(packs => packs.cost <= 3500)
     const tourisms = tourPack.filter(combo => combo.cost >= 7000)
-
+   
     //Using GET API From DB
     useEffect(() => {
         fetch('http://localhost:5000/tourism')
@@ -19,7 +19,7 @@ const Package = () => {
     },[])
     return (
         <>
-            <Container>
+            <Container>            
                 <h2 className="text-center">Perfect Holidays</h2>
                     <p className="text-center">Choose your best package to join world adventure club</p>
                 <div>

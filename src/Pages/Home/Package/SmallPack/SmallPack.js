@@ -20,9 +20,9 @@ const SmallPack = ({ tours }) => {
                     <div className="col-md-6">
                         <div className="mt-3">
                             <h3 >{title}</h3>
-                            <p>{destination}</p>
-                            <p>{dress}</p>
-                            <p>{description.slice(0,220)}</p>
+                            <p><span>{destination}</span><br />
+                           <small> {dress}</small> <br />
+                            {description.slice(0,220)}</p>
 
                             <Button className="bg-info border-0 mb-3">Tour Plan</Button>
                         </div>

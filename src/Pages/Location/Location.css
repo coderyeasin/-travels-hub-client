@@ -1,0 +1,16 @@
+.tour-location{
+    background-image: url("../../images/09.jpg");
+    background-color: #cccccc;
+    height: auto; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-attachment: fixed;
+}
+.locations{
+    background-color: rgba(0, 191, 255, 0.850);
+}
+.place{
+    text-align: right;
+    border-right: 2px solid rgba(5, 57, 75, 0.85);
+}
