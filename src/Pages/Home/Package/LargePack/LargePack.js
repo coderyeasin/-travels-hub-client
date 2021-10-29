@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button, Card, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './LargePack.css';
 
 const LargePack = ({ camp }) => {
-    const {title, image, description, destination, dress} = camp
+    
+    const {id, title, image, description, destination, dress} = camp
     return (
         <div >
           <Card>
@@ -15,7 +17,9 @@ const LargePack = ({ camp }) => {
                            <small> {dress}</small> <br />
                             {description.slice(0,220)}</p>
                 </Card.Text>
-                <Button variant="primary" className="bg-info border-0 mb-3">Tour Plan</Button>
+                    <Link  to={`/booking/${id}`}>
+                    <Button variant="primary" className="bg-info border-0 mb-3">Book Now</Button>
+                    </Link>
             </Card.Body>
             </Card>
         </div>

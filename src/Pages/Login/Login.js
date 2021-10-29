@@ -3,16 +3,20 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import { useForm } from "react-hook-form";
-import { useHistory, useLocation } from 'react-router';
+import { useHistory, useLocation, useParams } from 'react-router';
 import './Login.css';
 
 
 const Login = () => {
+    // const { id } = useParams()
+    
     const { user, gogoleSignIn } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.form || '/home';
+    const redirect_uri = location?.state?.form || "/home";
+
+    // `/booking/:${id}`
 
     const handleGoogle = () => {
         gogoleSignIn()

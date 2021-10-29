@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, ButtonGroup, Card, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const SmallPack = ({ tours }) => {
-    const{title, image, destination, dress, cost, description} = tours
+    const{id, title, image, destination, dress, cost, description} = tours
     return (
         <>
             <Container>
@@ -24,7 +25,9 @@ const SmallPack = ({ tours }) => {
                            <small> {dress}</small> <br />
                             {description.slice(0,220)}</p>
 
-                            <Button className="bg-info border-0 mb-3">Tour Plan</Button>
+                            <Link to={`/booking/${id}`}>
+                    <Button variant="primary" className="bg-info border-0 mb-3">Book Now</Button>
+                    </Link>
                         </div>
 
                     </div>

@@ -16,8 +16,8 @@ const Register = () => {
                 type="date" placeholder="date"
                         defaultValue={new Date()} className=" mb-3 p-1" />
                     <br />
-                <input className="mb-3 p-1 w-100" placeholder="Message" {...register("meassage")} /> <br />
-                <input className="mb-3 p-1 w-100" {...register("title", { required: true })} /> <br />
+                <input className="mb-3 p-1 w-100" placeholder="Message" {...register("message")} /> <br />
+                <input className="mb-3 p-1 w-100" {...register("title", { required: true })} placeholder="Country Code" /> <br />
                         
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input type="submit" value="Registration" className="bg-color" />

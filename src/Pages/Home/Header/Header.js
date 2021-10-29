@@ -34,8 +34,8 @@ const Header = () => {
                         </NavDropdown>
                         <Nav.Link id="menu" href="#action1">Location</Nav.Link>
                         <Nav.Link id="menu" href="#action1">Blog</Nav.Link>
-                           {user?.uid && user.displayName}
-                            {user?.uid ?
+                           {user?.email && user.displayName}
+                            {user?.email ?
                                 <Nav.Link onClick={userLogOut} id="menu" > Logout </Nav.Link>
                                 :
                                 <Nav.Link id="menu" > Register </Nav.Link>

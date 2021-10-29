@@ -11,6 +11,8 @@ import Footer from './Pages/Home/Footer/Footer';
 import Package from './Pages/Home/Package/Package';
 import Register from './Pages/Register/Register';
 import Login from './Pages/Login/Login';
+import Booking from './Pages/Booking/Booking';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 
 
 
@@ -23,10 +25,10 @@ function App() {
         <Switch>
           <Route exact path="/"><Home></Home></Route>
           <Route path="/home"><Home></Home></Route>
-          <Route path="/package"><Package></Package></Route>
+          <PrivateRoute path="/package"><Package></Package></PrivateRoute>
           <Route path="/register"><Register></Register></Route>
           <Route path="/login"><Login></Login> </Route>
-          
+          <PrivateRoute path="/booking/:id"> <Booking></Booking> </PrivateRoute>
           <Route path="*"><NotFound></NotFound> </Route>
         </Switch>
         <Footer></Footer>

@@ -1,0 +1,16 @@
+.booking{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.events{
+    padding: 15px 15px;
+    text-align: justify;
+    color: floralwhite;
+    background-color: rgba(30, 143, 255, 0.850);
+}
+.infos{
+    border-left: 2px solid dodgerblue;
+    text-align: right;
+}
+.selected {
+    opacity: 0.7;
+}
