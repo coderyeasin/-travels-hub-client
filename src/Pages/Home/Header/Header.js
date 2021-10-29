@@ -6,8 +6,9 @@ import './Header.css'
 
 const Header = () => {
 
-    const { user} = useAuth();
+    const { user, userLogOut} = useAuth();
 
+    
     return (
         <div>
            <Navbar bg="light" expand="lg">
@@ -16,7 +17,7 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                     <Nav
-                        className="ms-auto my-2 my-lg-0"
+                        className="ms-auto my-2 my-lg-0 align-items-center"
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
@@ -33,7 +34,12 @@ const Header = () => {
                         </NavDropdown>
                         <Nav.Link id="menu" href="#action1">Location</Nav.Link>
                         <Nav.Link id="menu" href="#action1">Blog</Nav.Link>
-                            <Nav.Link id="menu" href="#action1">{user?.uid ? 'Logout' : 'Register' }</Nav.Link>
+                           {user?.uid && user.displayName}
+                            {user?.uid ?
+                                <Nav.Link onClick={userLogOut} id="menu" > Logout </Nav.Link>
+                                :
+                                <Nav.Link id="menu" > Register </Nav.Link>
+                            }
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

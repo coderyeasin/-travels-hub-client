@@ -1,10 +1,27 @@
-import React from 'react';
+import { filter } from 'dom-helpers';
+import React, { useEffect, useState } from 'react';
+import { Container, Row } from 'react-bootstrap';
 
 const Package = () => {
+
+    const [tourPack, setTourPack] = useState([])
+
+    const tourism = tourPack.filter(packs => packs.cost < 5500)
+
+    //Using GET API From DB
+    useEffect(() => {
+        fetch('http://localhost:5000/tourism')
+            .then(res => res.json())
+        .then(data => setTourPack(data))
+    },[])
     return (
-        <div>
-            <h2>Best Holiday Package 2 row in with 6 card each col 3</h2>
-        </div>
+        <>
+            <Container>
+                <Row>
+                    {tourism?.map(tours => <li key={tours._id} >{tours.title}</li>   )         }
+                </Row>
+            </Container>
+        </>
     );
 };
 

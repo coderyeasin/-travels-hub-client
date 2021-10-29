@@ -20,7 +20,7 @@ const Register = () => {
                 <input className="mb-3 p-1 w-100" {...register("title", { required: true })} /> <br />
                         
                 {errors.exampleRequired && <span>This field is required</span>}
-                <input type="submit" />
+                <input type="submit" value="Registration" className="bg-color" />
             </form>
             </div>
         </div>
