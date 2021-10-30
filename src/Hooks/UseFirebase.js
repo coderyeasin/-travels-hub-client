@@ -6,7 +6,6 @@ travelAuthentication();
 
 const UseFirebase = () => {
     const [user, setUser] = useState({})
-    // const [isLogin, setIsLogin] = useState({})
 
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -27,6 +26,10 @@ const UseFirebase = () => {
         onAuthStateChanged(auth, user => {
             if (user) {
                 setUser(user)
+                const uid = user.uid
+            }
+            else {
+                
             }
         })
         

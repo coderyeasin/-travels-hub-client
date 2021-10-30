@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 
-const Register = () => {
+const AddNewZones = () => {
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
@@ -23,10 +23,8 @@ const Register = () => {
         })
     };
 
-   
     return (
         <div>
-  
             <div className="my-5 py-5 w-50 mx-auto" style={{ border: '3px solid gray' }}>
             <h3 className="text-center my-3">Please Register</h3>
             <form onSubmit={handleSubmit(onSubmit)} className="text-center m-5">
@@ -50,4 +48,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default AddNewZones;

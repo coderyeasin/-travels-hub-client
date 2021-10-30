@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Container} from 'react-bootstrap';
-import Upcoming from '../Upcoming/Upcoming';
 import LargePack from './LargePack/LargePack';
 import SmallPack from './SmallPack/SmallPack';
 
 const Package = () => {
-
     const [tourPack, setTourPack] = useState([])
-
     const tourism = tourPack.filter(packs => packs.cost <= 3500)
     const tourisms = tourPack.filter(combo => combo.cost >= 7000)
    

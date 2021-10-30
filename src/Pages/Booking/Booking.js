@@ -1,45 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Nav, NavbarBrand, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import './Booking.css';
+import useAuth from '../../Hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 
 const Booking = () => {
     let { id } = useParams()
-
-    const [user, setUser] = useState([])
+    const {user} = useAuth()
+    const [zones, setZones] = useState([])
     const [tourid, setTourId] = useState({})
     console.log(id);
 
     //get dynamic id to load full details
     useEffect(() => {
-        fetch('http://localhost:5000/tourism')
+        fetch(`http://localhost:5000/tourism`)
         .then(res => res.json())
-    .then(data => setUser(data))
+    .then(data => setZones(data))
     },[])
 
     //find for unique data
     useEffect(() => {
-        const matching = user.find(tour => tour.id == id)
+        const matching = zones.find(tour => tour.id == id)
        setTourId(matching) 
-    }, [user]) //eikhane dependency must uses
+    }, [zones]) //eikhane dependency must uses
     
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const history = useHistory();
 
-
-    /* 
-    destination
-departure
-age
-gender
-notinclude
-
-included
-tourplan
-
-    */
+    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        console.log(data)
+        fetch('http://localhost:5000/users',{
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+            if (data?.insertedId) {
+                alert('Thank you! see your my zones')
+                reset()
+                history.push('/dashboard')
+            }
+        })
+    };
     return (
         <div className="booking">
             <Container className="mb-5">
@@ -97,8 +105,18 @@ tourplan
                        
                     </div>
                     <div className="col-md-3">
-
-                        <div className="my-5 py-5 mx-auto" style={{ border: '3px solid gray' }}>
+                    {user?.uid &&
+                            <div className="text-center">
+                            <img className="img-fluid" src={user.photoURL} width="50px" height="50px" alt="" style={{borderRadius: '80px'}} />
+                            <h3>Username: {user?.displayName}</h3>
+                            <h4>Email: {user?.email}</h4>
+                            {user?.uid && 
+                                <p>{user.phoneNumber}</p>
+                            }
+                            <p>Last Sign In: {user.metadata.lastSignInTime}</p>
+                            </div>
+                        }
+                        <div className="py-3 mx-auto" style={{ border: '3px solid gray' }}>
                             <h1 className="text-center">Hurry Now!</h1>
                             <p className="text-center text-capitalize">Limited sit for next jump.</p>
                      <form onSubmit={handleSubmit(onSubmit)} className="text-center m-5">
@@ -109,8 +127,8 @@ tourplan
                 type="date" placeholder="date"
                         defaultValue={new Date()} className=" mb-3 p-1" />
                     <br />
-                <input className="mb-3 p-1 w-100" placeholder="Message" {...register("message")} /> <br />
-                <input className="mb-3 p-1 w-100" {...register("country", { required: true })} placeholder="Country Code" /> <br />
+                <input className="mb-3 p-1 w-100" placeholder="Confirm Message" {...register("message")} /> <br />
+                <input className="mb-3 p-1 w-100" {...register("country", { required: true })} placeholder="Coupon Code(If have?)" /> <br />
                         
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input type="submit" value="Book" className="bg-color" />
