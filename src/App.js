@@ -13,6 +13,9 @@ import Register from './Pages/Register/Register';
 import Login from './Pages/Login/Login';
 import Booking from './Pages/Booking/Booking';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import Dashboard from './Pages/Admin/Dashboard/Dashboard';
+import AddNewTours from './Pages/Admin/AddNewTours/AddNewTours';
+import ManageAllTours from './Pages/Admin/ManageAllTours/ManageAllTours';
 
 
 
@@ -29,6 +32,9 @@ function App() {
           <Route path="/register"><Register></Register></Route>
           <Route path="/login"><Login></Login> </Route>
           <PrivateRoute path="/booking/:id"> <Booking></Booking> </PrivateRoute>
+          <PrivateRoute path="/dashboard"> <Dashboard></Dashboard> </PrivateRoute>
+          <PrivateRoute path="/addnew"> <AddNewTours></AddNewTours> </PrivateRoute>
+          <PrivateRoute path="/manageall"> <ManageAllTours></ManageAllTours> </PrivateRoute>
           <Route path="*"><NotFound></NotFound> </Route>
         </Switch>
         <Footer></Footer>

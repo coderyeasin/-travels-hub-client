@@ -19,8 +19,8 @@ const Package = () => {
     },[])
     return (
         <>
-            <Container>            
-                <h2 className="text-center">Perfect Holidays</h2>
+            <Container id="zone" className="my-5">            
+                <h2 className="text-center">TouristsZone Holidays</h2>
                     <p className="text-center">Choose your best package to join world adventure club</p>
                 <div>
                     {tourism?.map(tours => <SmallPack key={tours._id} tours={tours}> </SmallPack>  )         }

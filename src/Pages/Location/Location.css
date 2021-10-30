@@ -8,7 +8,15 @@
     background-attachment: fixed;
 }
 .locations{
-    background-color: rgba(0, 191, 255, 0.850);
+    /* color: deepskyblue; */
+    /* background-color: rgba(0, 191, 255, 0.850); */
+    background-image: linear-gradient( to bottom, rgba(128, 128, 128, 0.459), rgba(255, 255, 0, 0.534)), url("../../images/4873.jpg");
+    opacity: 0.9;
+    background-color: #cccccc;
+    height: auto; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
 }
 .place{
     text-align: right;

@@ -1,13 +1,15 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
     return (
         <div>
+  
+            <div className="my-5 py-5 w-50 mx-auto" style={{ border: '3px solid gray' }}>
             <h3 className="text-center my-3">Please Register</h3>
-        <div className="my-5 py-5 w-50 mx-auto" style={{ border: '3px solid gray' }}>
             <form onSubmit={handleSubmit(onSubmit)} className="text-center m-5">
                 <input className="mb-3 p-1 w-100" placeholder="Name" {...register("name")} /> <br />
                 <input className="mb-3 p-1 w-100" placeholder="Email" {...register("email")} /> <br />
@@ -21,7 +23,8 @@ const Register = () => {
                         
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input type="submit" value="Registration" className="bg-color" />
-            </form>
+                </form>
+                <p className="my-3 text-center">Already an user? <Link to="/login">Please Login</Link></p>
             </div>
         </div>
     );

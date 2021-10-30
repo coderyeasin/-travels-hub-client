@@ -4,12 +4,12 @@ import './Location.css';
 
 const Location = () => {
     return (
-        <div className="tour-location my-5">
+        <div className="tour-location my-5" id="location">
             
                 <Row className="py-5 mx-auto">
                     <div className="col-md-2"></div>
                 <div className="col-md-7 py-3 locations">
-                    <h3 className="text-center my-3">Tourist attractions in the world</h3>
+                    <h3 className="text-center my-5">Tourist attractions in the world</h3>
                     <Row className="d-flex">
                     <div className="col-md-6 place">
                     <h3>Saka Hafong, Bandarban</h3>
