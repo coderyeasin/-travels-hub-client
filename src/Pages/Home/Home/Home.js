@@ -6,8 +6,6 @@ import Tourhub from '../Tourhub/Tourhub';
 import Upcoming from '../Upcoming/Upcoming';
 import './Home.css';
 
-// background-color:deepskyblue;
-
 const Home = () => {
     return (
         <div className="home">

@@ -17,7 +17,7 @@ const Upcoming = () => {
             
             <Row className="justify-content-center align-items-center">
                 <div className="col-md-5">
-                    <h3 className="text-center my-3">Upcoming Events</h3>
+                    <h3 className="text-center my-3">Eyes on here its always up-to-date</h3>
                     <p>Most people’s experience of the Norwegian fjords is from the deck of a cruise ship, but it’s more rewarding to set out on foot and explore. Of course, the geography dictates that the walks involve big ups and downs, starting and finishing at the fjord edge. It’s exhilarating and not for the fainthearted..</p>
                     <p>Take a tour of the megalithic sites
                         There are a dozen megalithic sites in and around the Alentejo region. The circuit starts with the Almendres Megalithic settlement, the largest and oldest monument that dates back to 4,000 years. Make a stop at the small village of Nossa Senhora de Guadalupe, and continue along the marked trail to discover Almendres Menhir, Anta Grande do Zambujeiro and more.</p>
