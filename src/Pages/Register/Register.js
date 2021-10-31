@@ -6,7 +6,7 @@ const Register = () => {
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/users',{
+        fetch('https://rocky-wildwood-05535.herokuapp.com/users',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

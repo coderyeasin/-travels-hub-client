@@ -8,7 +8,7 @@ const Updated = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const url = `http://localhost:5000/users/${id}`
+        const url = `https://rocky-wildwood-05535.herokuapp.com/${id}`
         fetch(url)
             .then(res => res.json())
         .then(data => setUser(data))
@@ -32,7 +32,7 @@ const Updated = () => {
 
 //update
     const handleUpdated = (e) => {
-        const url = `http://localhost:5000/users/${id}`
+        const url = `https://rocky-wildwood-05535.herokuapp.com/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {

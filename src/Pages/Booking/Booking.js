@@ -15,7 +15,7 @@ const Booking = () => {
 
     //get dynamic id to load full details
     useEffect(() => {
-        fetch(`http://localhost:5000/tourism`)
+        fetch(`https://rocky-wildwood-05535.herokuapp.com/tourism`)
         .then(res => res.json())
     .then(data => setZones(data))
     },[])
@@ -31,7 +31,7 @@ const Booking = () => {
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/users',{
+        fetch('https://rocky-wildwood-05535.herokuapp.com/users',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

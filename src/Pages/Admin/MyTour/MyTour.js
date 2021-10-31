@@ -8,7 +8,7 @@ const MyTour = () => {
     const [booked, setBooked] = useState(false)
 
     useEffect(() => {
-        const url = `http://localhost:5000/myzones/${user?.email}`
+        const url = `https://rocky-wildwood-05535.herokuapp.com/${user?.email}`
         fetch(url)           
             .then(res => res.json())
             .then(data => setTour(data))        
@@ -23,7 +23,7 @@ const MyTour = () => {
         console.log(id);
         const procced = window.confirm('Are you sure want to delete?')
        if (procced) {
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://rocky-wildwood-05535.herokuapp.com/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
