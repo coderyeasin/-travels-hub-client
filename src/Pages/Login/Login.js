@@ -16,7 +16,7 @@ const Login = () => {
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location?.state?.form || "/home";
-    
+    console.log(redirect_uri);
    
     const handleGoogle = () => {
         gogoleSignIn()
@@ -55,13 +55,13 @@ const Login = () => {
 
 
     return (
-        <div className="my-5 py-5 w-50 mx-auto" style={{ border: '3px solid gray' }}>
+        <div className="my-5 py-5 w-50 mx-auto" style={{ border: '3px solid deepskyblue' }}>
             <div className="my-5 w-50 mx-auto">
             <h3 className="my-5 text-center">Please Login</h3>
-            <form onSubmit={handleSubmit(onSubmit)} className="text-center m-5">
+            <form onSubmit={handleSubmit(onSubmit)} className="text-center m-5" >
                 <input className="mb-3 p-1 w-100" type="email" placeholder="Email" {...register("email")} /> <br />
                 <input className="mb-3 p-1 w-100" type="password"
-                        {...register("password", { pattern: /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{5,}$/})} placeholder="Exp: 1 digit,1 uppercase&lowercase, min-5 charcter pass" /> <br />
+                        {...register("password", { pattern: /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{5,}$/})} placeholder="Valid Password" /> <br />
                         
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input className="bg-color" type="submit" value="Login" />

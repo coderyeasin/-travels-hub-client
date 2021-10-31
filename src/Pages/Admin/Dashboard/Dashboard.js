@@ -9,7 +9,7 @@ import TotalUser from '../TotalUser/TotalUser';
 import './Dashboard.css';
 
 const Dashboard = () => {
-    const { user, logOut } = useAuth()
+    const { user, userLogOut } = useAuth()
 
     console.log(user);
     return (
@@ -22,7 +22,7 @@ const Dashboard = () => {
                         <HashLink className="text-light text-decoration-none fs-5 mb-3" to="/mytour">My Zones</HashLink>
                         <HashLink className="text-light text-decoration-none fs-5 mb-3" to="/addnewzones">Add New TourZone</HashLink>
                         <HashLink className="text-light text-decoration-none fs-5 mb-3" to="/manageallzones">Manage All TourZone</HashLink>
-                        <HashLink onClick={logOut} className="text-light text-decoration-none fs-5 mb-3" to="">Logout</HashLink>
+                        <HashLink onClick={userLogOut} className="text-light text-decoration-none fs-5 mb-3" to="">Logout</HashLink>
                         </Nav>
                     </div>
                     <div className="col-md-10 py-3">

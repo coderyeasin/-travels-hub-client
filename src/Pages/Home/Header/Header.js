@@ -1,10 +1,13 @@
 import useAuth from '../../../Hooks/useAuth';
 import React from 'react';
-import { Container,Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Navbar } from 'react-bootstrap';
+import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import Banner from '../Banner/Banner';
 import { HashLink, NavHashLink } from 'react-router-hash-link';
 import './Header.css'
 import { Link } from 'react-router-dom';
+import logo from '../../../images/logo(1).png'
 
 const Header = () => {
 
@@ -13,9 +16,17 @@ const Header = () => {
     
     return (
         <div id="home">
-           <Navbar bg="light" expand="lg">
+           <Navbar fixed="top" bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#">Travels Hub</Navbar.Brand>
+                    <Navbar.Brand href="#">
+                        <img
+                        src={logo}
+                        width="130"
+                        height="50"
+                        className="d-inline-block align-top"
+                        alt="React Bootstrap logo"
+                        />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -34,7 +45,8 @@ const Header = () => {
                              <NavHashLink to="/dashboard" id="menu" className="px-3">Dashboard</NavHashLink> <br />
                              <NavHashLink to="/mytour" id="menu" className="px-3">My Zones</NavHashLink> <br />
                              <NavHashLink to="/addnewzones" id="menu" className="px-3">Add TourZone</NavHashLink> <br />
-                             <NavHashLink to="/manageallzones" id="menu" className="px-3">Manage AllZone</NavHashLink>
+                             <NavHashLink to="/manageallzones" id="menu" className="px-3">Manage AllZone</NavHashLink> <br />
+                             <NavHashLink to="/totaluser" id="menu" className="px-3">Total Users</NavHashLink>
                              <NavDropdown.Divider />
                              <NavDropdown.Item href="#action5">
                                  Get Start a Event

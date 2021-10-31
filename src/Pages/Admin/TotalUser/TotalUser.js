@@ -1,17 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row} from 'react-bootstrap';
 import Table from 'react-bootstrap/Table'
+import { Link } from 'react-router-dom';
 
 
 const TotalUser = () => {
     // const { user } = useAuth()
     const [user, setUser] = useState([])
+    const [fullUser, setfullUser] = useState(false)
+
     useEffect(() => {
         fetch('http://localhost:5000/users')
             .then(res => res.json())
         .then(data => setUser(data))
-    }, [])
-    const trueUser = user.filter(pd => pd?.email && pd?.name && pd?.password )
+    }, [fullUser])
+    const trueUser = user.filter(pd => pd?.email && pd?.name || pd?.password)
+    
+//updated - user info
+    // const handleUpdated = (id) => {
+    //     console.log('omg! its clicked', id);
+    // }
+
+
+    // //Delete
+    const handleDelUser = id => {
+        console.log(id);
+        const procced = window.confirm('Are you sure want to delete?')
+       if (procced) {
+        fetch(`http://localhost:5000/total/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.deletedCount > 0) {
+                    console.log('success');
+                      setfullUser(!fullUser)
+                }
+                else {
+                    setfullUser(false)
+                }
+            });
+       }
+    };
     return (
         <div>
             <Container>
@@ -38,8 +69,12 @@ const TotalUser = () => {
                         <td>{users.email}</td>
                         <td>{users.phone}</td>
                         <td>{users.image}</td>
-                        <td><button className="text-warning border-warning">OK</button></td>
-                        <td><button className="text-danger border-danger">X</button></td>
+                        <td>
+                                    <Link to={`/updated/${users._id}`}>
+                                    <button className="text-warning border-warning">OK</button>
+                                    </Link>
+                        </td>
+                        <td><button  onClick={() => handleDelUser(users._id)} className="text-danger border-danger">X</button></td>
                         </tr>
                     </tbody>
                     </Table>

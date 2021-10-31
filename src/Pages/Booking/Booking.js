@@ -4,7 +4,6 @@ import { useHistory, useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import './Booking.css';
 import useAuth from '../../Hooks/useAuth';
-import { Link } from 'react-router-dom';
 
 
 const Booking = () => {

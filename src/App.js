@@ -18,6 +18,7 @@ import ManageAllZones from './Pages/Admin/ManageAllZones/ManageAllZones';
 import AddNewZones from './Pages/Admin/AddNewZones/AddNewZones';
 import TotalUser from './Pages/Admin/TotalUser/TotalUser';
 import MyTour from './Pages/Admin/MyTour/MyTour';
+import Updated from './Pages/Admin/Updated/Updated';
 
 
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/mytour"> <MyTour></MyTour> </Route>
           <Route path="/addnewzones"> <AddNewZones></AddNewZones></Route>
           <Route path="/manageallzones"> <ManageAllZones></ManageAllZones> </Route>
+          <Route path="/updated/:id"> <Updated></Updated> </Route>
           <Route path="/totaluser"> <TotalUser></TotalUser> </Route>
           <Route path="*"><NotFound></NotFound> </Route>
         </Switch>

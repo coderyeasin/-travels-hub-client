@@ -26,10 +26,10 @@ const Register = () => {
    
     return (
         <div>
-            <div className="my-5 py-5 w-50 mx-auto" style={{ border: '3px solid gray' }}>
+            <div className="my-5 py-5 w-50 mx-auto" style={{ border: '3px solid deepskyblue' }}>
                 <h3 className="text-center my-3">Please Register</h3>
                 
-            <form onSubmit={handleSubmit(onSubmit)} className="text-center m-5">
+            <form onSubmit={handleSubmit(onSubmit)} className="text-center m-5" >
                     <input className="mb-3 p-1 w-100" placeholder="Name" {...register("name")} /> <br />
                     <input className="mb-3 p-1 w-100" type="password"
                         {...register("password", { pattern: /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{5,}$/})} placeholder="Exp: 1 digit,1 uppercase&lowercase, min-5 charcter pass" /> <br />
