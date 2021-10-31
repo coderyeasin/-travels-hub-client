@@ -9,7 +9,7 @@ const ManageAllZones = () => {
     const [manage, setManage] = useState(false)
        //Using GET API From DB
        useEffect(() => {
-        fetch('http://localhost:5000/tourism')
+        fetch('https://rocky-wildwood-05535.herokuapp.com/tourism')
             .then(res => res.json())
         .then(data => setZones(data))
        }, [manage])
@@ -19,7 +19,7 @@ const ManageAllZones = () => {
         console.log(id);
         const procced = window.confirm('Are you sure want to delete?')
        if (procced) {
-        fetch(`http://localhost:5000/alllzones/${id}`, {
+        fetch(`https://rocky-wildwood-05535.herokuapp.com/alllzones/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

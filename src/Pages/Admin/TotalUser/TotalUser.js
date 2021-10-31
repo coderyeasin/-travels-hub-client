@@ -21,7 +21,7 @@ const TotalUser = () => {
         console.log(id);
         const procced = window.confirm('Are you sure want to delete?')
        if (procced) {
-        fetch(`http://localhost:5000/total/${id}`, {
+        fetch(`https://rocky-wildwood-05535.herokuapp.com/total/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
