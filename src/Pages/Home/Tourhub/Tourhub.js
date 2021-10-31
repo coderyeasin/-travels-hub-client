@@ -59,22 +59,3 @@ const Tourhub = () => {
 };
 
 export default Tourhub;
-
-
-/* <div className="col-md-4 infos order-1">
-                                <div className="infos">
-                                <h2>Facilities</h2>
-                                <h5>Destination: </h5>
-                                <h5>Age: </h5>
-                                <h5>Gender: </h5>
-                                <h5>Don't Get: </h5>
-                                </div>
-                                <div className="infos">
-                                <h2>Included</h2>
-                                <h4 className="my-3"> Per/Persons: </h4>
-                                <h5>Destination: </h5>
-                                <h5>Age: </h5>
-                                <h5>Gender: </h5>
-                                <h5>Don't Get: </h5>
-                                </div>
-                        </div> */

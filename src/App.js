@@ -37,11 +37,11 @@ function App() {
           <Route path="/login"><Login></Login> </Route>
           <PrivateRoute path="/booking/:id"> <Booking></Booking> </PrivateRoute>
           <PrivateRoute path="/dashboard"> <Dashboard></Dashboard> </PrivateRoute>
-          <Route path="/mytour"> <MyTour></MyTour> </Route>
-          <Route path="/addnewzones"> <AddNewZones></AddNewZones></Route>
-          <Route path="/manageallzones"> <ManageAllZones></ManageAllZones> </Route>
-          <Route path="/updated/:id"> <Updated></Updated> </Route>
-          <Route path="/totaluser"> <TotalUser></TotalUser> </Route>
+          <PrivateRoute path="/mytour"> <MyTour></MyTour> </PrivateRoute>
+          <PrivateRoute path="/addnewzones"> <AddNewZones></AddNewZones></PrivateRoute>
+          <PrivateRoute path="/manageallzones"> <ManageAllZones></ManageAllZones> </PrivateRoute>
+          <PrivateRoute path="/updated/:id"> <Updated></Updated> </PrivateRoute>
+          <PrivateRoute path="/totaluser"> <TotalUser></TotalUser> </PrivateRoute>
           <Route path="*"><NotFound></NotFound> </Route>
         </Switch>
         <Footer></Footer>

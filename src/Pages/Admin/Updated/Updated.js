@@ -8,7 +8,7 @@ const Updated = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const url = `https://rocky-wildwood-05535.herokuapp.com/${id}`
+        const url = `https://rocky-wildwood-05535.herokuapp.com/users/${id}`
         fetch(url)
             .then(res => res.json())
         .then(data => setUser(data))
@@ -32,7 +32,7 @@ const Updated = () => {
 
 //update
     const handleUpdated = (e) => {
-        const url = `https://rocky-wildwood-05535.herokuapp.com/${id}`
+        const url = `https://rocky-wildwood-05535.herokuapp.com/users/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -43,7 +43,7 @@ const Updated = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    alert('Successfullly added user ino')
+                    alert('Successfullly added user info')
                     setUser({})
                     window.location.href='/dashboard'
                 }
@@ -55,7 +55,7 @@ const Updated = () => {
 
     return (
         <div className="text-center">
-            <h2 className="my-5">Please Update your info {id}</h2>
+            <h2 className="my-5">Please Update your Info </h2>
             <Container>
             <Row>
                 <div className="col-md-6">

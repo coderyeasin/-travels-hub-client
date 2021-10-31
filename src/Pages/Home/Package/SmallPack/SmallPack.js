@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonGroup, Card, Container, Row } from 'react-bootstrap';
+import { Button, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SmallPack = ({ tours }) => {
@@ -21,7 +21,7 @@ const SmallPack = ({ tours }) => {
                     <div className="col-md-6">
                         <div className="mt-3">
                             <h3 >{title}</h3>
-                            <p><span>{destination}</span><br />
+                            <p><span>{destination}</span> ||
                            <small> {dress}</small> <br />
                             {description.slice(0,220)}</p>
 

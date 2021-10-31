@@ -10,8 +10,6 @@ import './Dashboard.css';
 
 const Dashboard = () => {
     const { user, userLogOut } = useAuth()
-
-    console.log(user);
     return (
         <>
             <Container>
@@ -27,8 +25,8 @@ const Dashboard = () => {
                     </div>
                     <div className="col-md-10 py-3">
                         <Row>
-                        <div className="col-md-10">
-                                <h3 className="text-center">Booked Zones List : {user.length}</h3>
+                        <div className="col-md-10 mx-auto">
+                                <h3 className="text-center">Selected Zones</h3>
                                {user.code ||  <MyTour></MyTour>}
                                {user.image &&  <AddNewZones></AddNewZones>}
                                {user.location && <ManageAllZones></ManageAllZones>} 

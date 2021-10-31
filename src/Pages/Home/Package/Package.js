@@ -10,7 +10,7 @@ const Package = () => {
    
     //Using GET API From DB
     useEffect(() => {
-        fetch('http://localhost:5000/tourism')
+        fetch('https://rocky-wildwood-05535.herokuapp.com/tourism')
             .then(res => res.json())
         .then(data => setTourPack(data))
     },[])
