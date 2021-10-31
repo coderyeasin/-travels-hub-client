@@ -15,6 +15,7 @@
     <li> Can be Updated</li>
     <li> Save all Data</li>
     <li> Also you can add a Tourist zone</li>
+    <li> Everything is set dynamically, Controlled from your Dashboard</li>
     <li> Happy Journey</li>
 </ul>
 
