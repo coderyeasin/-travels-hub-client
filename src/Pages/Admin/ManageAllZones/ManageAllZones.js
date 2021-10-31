@@ -39,7 +39,7 @@ const ManageAllZones = () => {
         <div>
             <Container>
                 <Row className="my-5">
-                    <h3 className="text-center mb-3">Manage All Zones || You can mange from here</h3>
+                    <h3 className="text-center mb-3">Manage All Zones | {zones.length} | You can mange from here</h3>
                     {zones?.map(tours => <Table  responsive striped bordered hover key={tours._id}>
                     <thead>
                         <tr>

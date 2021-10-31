@@ -24,7 +24,7 @@ const Header = () => {
                         width="130"
                         height="50"
                         className="d-inline-block align-top"
-                        alt="React Bootstrap logo"
+                        alt="Hero"
                         />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -48,6 +48,8 @@ const Header = () => {
                              <NavHashLink to="/manageallzones" id="menu" className="px-3">Manage AllZone</NavHashLink> <br />
                              <NavHashLink to="/totaluser" id="menu" className="px-3">Total Users</NavHashLink>
                              <NavDropdown.Divider />
+                             <NavHashLink to="" onClick={userLogOut} id="menu" className="px-3">LogOut</NavHashLink>
+                             <NavDropdown.Divider />
                              <NavDropdown.Item href="#action5">
                                  Get Start a Event
                              </NavDropdown.Item>
@@ -59,7 +61,7 @@ const Header = () => {
                         }
                            {user?.email && user.displayName}
                             {user?.email ?
-                                <img src={user.photoURL} className="img-fluid" width="30px" height="30px" style={{ borderRadius:'15px', marginLeft:'5px'}} alt="" /> &&
+                                <img src={user.photoURL} className="img-fluid" width="30px" height="30px" style={{ borderRadius:'15px', marginLeft:'5px'}} alt="" /> ||
                                 <Nav.Link onClick={userLogOut} id="menu" > Logout </Nav.Link>
                                 :
                                 <HashLink className="me-3 fs-6 btn btn-info text-light" to="/register" id="menu">Join US!</HashLink>

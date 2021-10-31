@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 const TotalUser = () => {
-    // const { user } = useAuth()
     const [user, setUser] = useState([])
     const [fullUser, setfullUser] = useState(false)
 
@@ -16,11 +15,6 @@ const TotalUser = () => {
     }, [fullUser])
     const trueUser = user.filter(pd => pd?.email && pd?.name || pd?.password)
     
-//updated - user info
-    // const handleUpdated = (id) => {
-    //     console.log('omg! its clicked', id);
-    // }
-
 
     // //Delete
     const handleDelUser = id => {

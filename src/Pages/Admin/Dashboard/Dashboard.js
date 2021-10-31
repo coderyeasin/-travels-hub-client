@@ -26,11 +26,9 @@ const Dashboard = () => {
                     <div className="col-md-10 py-3">
                         <Row>
                         <div className="col-md-10 mx-auto">
-                                <h3 className="text-center">Selected Zones</h3>
+                                <h3 className="text-center">See Your Zones</h3>
                                {user.code ||  <MyTour></MyTour>}
-                               {user.image &&  <AddNewZones></AddNewZones>}
-                               {user.location && <ManageAllZones></ManageAllZones>} 
-                                {user.name && <TotalUser></TotalUser>}
+
                         </div>
                         <div className="col-md-2">
                         {user?.uid &&
