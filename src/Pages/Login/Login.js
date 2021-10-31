@@ -5,26 +5,15 @@ import useAuth from '../../Hooks/useAuth';
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation, useParams } from 'react-router';
 import './Login.css';
+import useLogin from '../../Hooks/useLogin';
 
 
 const Login = () => {
     const {id} = useParams()
-    // const [user, setUser] = useState([])
   
-    const { gogoleSignIn } = useAuth();
+    const { handleGoogle } = useLogin();
 
-    const location = useLocation();
-    const history = useHistory();
-    const redirect_uri = location?.state?.form || "/home";
-    console.log(redirect_uri);
-   
-    const handleGoogle = () => {
-        gogoleSignIn()
-        .then(result => {
-            history.push(redirect_uri)
-            console.log(result.user);
-    })
-    }
+ 
 
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
