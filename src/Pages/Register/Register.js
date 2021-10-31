@@ -26,9 +26,9 @@ const Register = () => {
    
     return (
         <div>
-  
             <div className="my-5 py-5 w-50 mx-auto" style={{ border: '3px solid gray' }}>
-            <h3 className="text-center my-3">Please Register</h3>
+                <h3 className="text-center my-3">Please Register</h3>
+                
             <form onSubmit={handleSubmit(onSubmit)} className="text-center m-5">
                     <input className="mb-3 p-1 w-100" placeholder="Name" {...register("name")} /> <br />
                     <input className="mb-3 p-1 w-100" type="password"
@@ -44,6 +44,7 @@ const Register = () => {
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input type="submit" value="Registration" className="bg-color" />
                 </form>
+                
                 <p className="my-3 text-center">Already an user? <Link to="/login">Please Login</Link></p>
             </div>
         </div>

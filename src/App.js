@@ -14,9 +14,10 @@ import Login from './Pages/Login/Login';
 import Booking from './Pages/Booking/Booking';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Admin/Dashboard/Dashboard';
-import Myzones from './Pages/Admin/Myzones/Myzones';
 import ManageAllZones from './Pages/Admin/ManageAllZones/ManageAllZones';
 import AddNewZones from './Pages/Admin/AddNewZones/AddNewZones';
+import TotalUser from './Pages/Admin/TotalUser/TotalUser';
+import MyTour from './Pages/Admin/MyTour/MyTour';
 
 
 
@@ -35,9 +36,10 @@ function App() {
           <Route path="/login"><Login></Login> </Route>
           <PrivateRoute path="/booking/:id"> <Booking></Booking> </PrivateRoute>
           <PrivateRoute path="/dashboard"> <Dashboard></Dashboard> </PrivateRoute>
-          <Route path="/myzones"> <Myzones></Myzones> </Route>
+          <Route path="/mytour"> <MyTour></MyTour> </Route>
           <Route path="/addnewzones"> <AddNewZones></AddNewZones></Route>
           <Route path="/manageallzones"> <ManageAllZones></ManageAllZones> </Route>
+          <Route path="/totaluser"> <TotalUser></TotalUser> </Route>
           <Route path="*"><NotFound></NotFound> </Route>
         </Switch>
         <Footer></Footer>

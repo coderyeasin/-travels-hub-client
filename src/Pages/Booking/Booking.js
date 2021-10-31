@@ -42,7 +42,7 @@ const Booking = () => {
             .then(res => res.json())
             .then(data => {
             if (data?.insertedId) {
-                alert('Thank you! see your my zones')
+                alert('Maybe it is a great journey with us! Thank You.')
                 reset()
                 history.push('/dashboard')
             }
@@ -53,16 +53,16 @@ const Booking = () => {
             <Container className="mb-5">
             <Nav fill variant="tabs" defaultActiveKey="/home">
                 <Nav.Item>
-                    <Nav.Link href="">Attractions</Nav.Link>
+                    <Nav.Link className="fs-5" href="">Attractions</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="">Tour Plan</Nav.Link>
+                    <Nav.Link className="fs-5" eventKey="">Tour Plan</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="">Included</Nav.Link>
+                    <Nav.Link className="fs-5" href="">Included</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="">Facilities</Nav.Link>
+                    <Nav.Link className="fs-5" eventKey="">Facilities</Nav.Link>
                 </Nav.Item>
                 </Nav>
                 <Row className="my-5">
@@ -72,6 +72,10 @@ const Booking = () => {
                             <img src={tourid?.image} className="img-fluid selected" alt="" />
                         <article className="my-3 events  bottom-0">
                             <h3 className="my-3"><strong>Event Name:</strong> {tourid?.title}</h3>
+                                    <p className="my-3">
+                                        <strong>Destination:</strong> {tourid?.destination} <br />
+                                        <strong>Departure:</strong> {tourid?.departure} <br />
+                                    </p>
                             <p className="my-3 fs-5"><strong>Description:</strong> {tourid?.description}</p>
                             </article>
                             </div>
@@ -116,16 +120,16 @@ const Booking = () => {
                             <p>Last Sign In: {user.metadata.lastSignInTime}</p>
                             </div>
                         }
-                        <div className="py-3 mx-auto" style={{ border: '3px solid gray' }}>
+                        <div className="py-3 mx-auto" style={{ border: '3px solid deepskyblue' }}>
                             <h1 className="text-center">Hurry Now!</h1>
                             <p className="text-center text-capitalize">Limited sit for next jump.</p>
                      <form onSubmit={handleSubmit(onSubmit)} className="text-center m-5">
-                <input className="mb-3 p-1 w-100" placeholder="Name" {...register("name")} /> <br />
+                <input className="mb-3 p-1 w-100" placeholder="title" {...register("tours")} /> <br />
                 <input className="mb-3 p-1 w-100" placeholder="Email" {...register("email")} /> <br />
                 <input className="mb-3 p-1 w-100" placeholder="Phone" {...register("phone")} /> <br />
                 <input {...register("date", { required: true })}
-                type="date" placeholder="date"
-                        defaultValue={new Date()} className=" mb-3 p-1" />
+                type="datetime-local" placeholder="select date"
+                        defaultValue={new Date()} className="w-50 mb-3 p-1" />
                     <br />
                 <input className="mb-3 p-1 w-100" placeholder="Confirm Message" {...register("message")} /> <br />
                 <input className="mb-3 p-1 w-100" {...register("country", { required: true })} placeholder="Coupon Code(If have?)" /> <br />

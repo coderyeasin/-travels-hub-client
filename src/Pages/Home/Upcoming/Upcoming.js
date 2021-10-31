@@ -17,7 +17,7 @@ const Upcoming = () => {
             
             <Row className="justify-content-center align-items-center">
                 <div className="col-md-5">
-                    <h3 className="text-center">Upcoming Events</h3>
+                    <h3 className="text-center my-3">Upcoming Events</h3>
                     <p>Hunt for hidden treasures at the Estremoz Market
                         It’s a half-hour detour from the capital of Evora, but that’s all part of the fun when visiting this vibrant Saturday market. Come early for the garden variety produce and bakery delicacies like pane de casa.</p>
                     <p>Take a tour of the megalithic sites
